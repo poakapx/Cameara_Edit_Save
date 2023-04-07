@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity
         this.imageView = findViewById(R.id.mainImageView);
     }
 
-    public void onClick(View view) {
+    public void onClick(View view)
+    {
         switch (view.getId()) {
             case R.id.openGalleryButton:
                 this.verifyStoragePermissionsAndPerformOperation(REQUEST_EXTERNAL_STORAGE_CODE);
@@ -44,17 +45,22 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    private void verifyStoragePermissionsAndPerformOperation(int requestPermissionCode) {
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+    private void verifyStoragePermissionsAndPerformOperation(int requestPermissionCode)
+    {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
+        {
             Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             startActivityForResult(intent, PICK_IMAGE_CODE);
-        } else {
-            // Check if we have storage permission
+        }
+        else
+        {
             int permission = ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-            if (permission != PackageManager.PERMISSION_GRANTED) {
-                // Request the permission.
+            if (permission != PackageManager.PERMISSION_GRANTED)
+            {
                 ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.WRITE_EXTERNAL_STORAGE }, requestPermissionCode);
-            } else {
+            }
+            else
+            {
                 Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(intent, PICK_IMAGE_CODE);
             }
