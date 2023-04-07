@@ -21,7 +21,8 @@ import com.dsphotoeditor.sdk.activity.DsPhotoEditorActivity;
 import com.dsphotoeditor.sdk.utils.DsPhotoEditorConstants;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
 
     public static final int PICK_IMAGE_CODE = 100;
     public static final int DS_PHOTO_EDITOR_REQUEST_CODE = 200;
@@ -104,11 +105,6 @@ public class MainActivity extends AppCompatActivity {
                         // If this is omitted, the edited photo will be saved to a folder
                         // named "DS_Photo_Editor" by default.
                         dsPhotoEditorIntent.putExtra(DsPhotoEditorConstants.DS_PHOTO_EDITOR_OUTPUT_DIRECTORY, OUTPUT_PHOTO_DIRECTORY);
-
-                        // You can also hide some tools you don't need as below
-//                        int[] toolsToHide = {DsPhotoEditorActivity.TOOL_PIXELATE, DsPhotoEditorActivity.TOOL_ORIENTATION};
-//                        dsPhotoEditorIntent.putExtra(DsPhotoEditorConstants.DS_PHOTO_EDITOR_TOOLS_TO_HIDE, toolsToHide);
-
                         startActivityForResult(dsPhotoEditorIntent, DS_PHOTO_EDITOR_REQUEST_CODE);
                     } else {
                         Toast.makeText(this, "Please select an image from the Gallery", Toast.LENGTH_LONG).show();
@@ -122,6 +118,4 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
-
 }
