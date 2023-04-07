@@ -112,6 +112,7 @@ public class MainActivity extends AppCompatActivity
                         dsPhotoEditorIntent.setData(inputImageUri);
 
                         // Это не особо важно. При выводе окна с каталогом редактированная, фотка будет сохранена в указанной папке на внешнем хранилище устройства. Иначе отредактированная фотография по умолчанию будет сохранена в папку с именем «DS_Photo_Editor».
+                        // Да и вообще, язык текста будет зависить от языка системника.
                         dsPhotoEditorIntent.putExtra(DsPhotoEditorConstants.DS_PHOTO_EDITOR_OUTPUT_DIRECTORY, OUTPUT_PHOTO_DIRECTORY);
                         startActivityForResult(dsPhotoEditorIntent, DS_PHOTO_EDITOR_REQUEST_CODE);
                     }
