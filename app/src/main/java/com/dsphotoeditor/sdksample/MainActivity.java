@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity
     public static final String OUTPUT_PHOTO_DIRECTORY = "ds_photo_editor_sample";
     private ImageView imageView;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -38,7 +39,8 @@ public class MainActivity extends AppCompatActivity
 
     public void onClick(View view)
     {
-        switch (view.getId()) {
+        switch (view.getId())
+        {
             case R.id.openGalleryButton:
                 this.verifyStoragePermissionsAndPerformOperation(REQUEST_EXTERNAL_STORAGE_CODE);
                 break;
@@ -69,16 +71,20 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+        {
             Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             startActivityForResult(intent, PICK_IMAGE_CODE);
         }
-        else {
+        else
+        {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("The app needs this permission to edit photos on your device.");
-            builder.setPositiveButton("Update Permission",  new DialogInterface.OnClickListener(){
+            builder.setPositiveButton("Update Permission",  new DialogInterface.OnClickListener()
+            {
                 @Override
-                public void onClick(DialogInterface dialog, int which) {
+                public void onClick(DialogInterface dialog, int which)
+                {
                     verifyStoragePermissionsAndPerformOperation(REQUEST_EXTERNAL_STORAGE_CODE);
                 }
             });
@@ -89,7 +95,7 @@ public class MainActivity extends AppCompatActivity
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
-    /* Handle the results */
+    /* Обработка резуьтатов */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
