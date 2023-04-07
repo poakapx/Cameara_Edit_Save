@@ -117,13 +117,13 @@ public class MainActivity extends AppCompatActivity
                     }
                     else
                     {
-                        Toast.makeText(this, "Please select an image from the Gallery", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "Выбери изображение из своей галереи", Toast.LENGTH_LONG).show();
                     }
                     break;
                 case DS_PHOTO_EDITOR_REQUEST_CODE:
                     Uri outputUri = data.getData();
                     imageView.setImageURI(outputUri);
-                    Toast.makeText(this, "Photo saved in " + OUTPUT_PHOTO_DIRECTORY + " folder.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Фото в " + OUTPUT_PHOTO_DIRECTORY + " успешно сохранено!", Toast.LENGTH_LONG).show();
                     break;
             }
         }
