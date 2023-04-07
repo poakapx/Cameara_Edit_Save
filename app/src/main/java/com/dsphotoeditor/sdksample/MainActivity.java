@@ -95,25 +95,28 @@ public class MainActivity extends AppCompatActivity
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
-    /* Обработка резуьтатов */
+    /* Обработка резльтатов */
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
-            switch (requestCode) {
+        if (resultCode == RESULT_OK)
+        {
+            switch (requestCode)
+            {
                 case PICK_IMAGE_CODE:
                     Uri inputImageUri = data.getData();
-                    if (inputImageUri != null) {
+                    if (inputImageUri != null)
+                    {
                         Intent dsPhotoEditorIntent = new Intent(this, DsPhotoEditorActivity.class);
                         dsPhotoEditorIntent.setData(inputImageUri);
 
-                        // This is optional. By providing an output directory, the edited photo
-                        // will be saved in the specified folder on your device's external storage;
-                        // If this is omitted, the edited photo will be saved to a folder
-                        // named "DS_Photo_Editor" by default.
+                        // Это не особо важно. При выводе окна с каталогом редактированная, фотка будет сохранена в указанной папке на внешнем хранилище устройства. Иначе отредактированная фотография по умолчанию будет сохранена в папку с именем «DS_Photo_Editor».
                         dsPhotoEditorIntent.putExtra(DsPhotoEditorConstants.DS_PHOTO_EDITOR_OUTPUT_DIRECTORY, OUTPUT_PHOTO_DIRECTORY);
                         startActivityForResult(dsPhotoEditorIntent, DS_PHOTO_EDITOR_REQUEST_CODE);
-                    } else {
+                    }
+                    else
+                    {
                         Toast.makeText(this, "Please select an image from the Gallery", Toast.LENGTH_LONG).show();
                     }
                     break;
