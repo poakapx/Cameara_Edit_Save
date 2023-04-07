@@ -1,4 +1,4 @@
-package com.dsphotoeditor.sdksample;
+package com.camera;
 
 import android.Manifest;
 import android.app.AlertDialog;
