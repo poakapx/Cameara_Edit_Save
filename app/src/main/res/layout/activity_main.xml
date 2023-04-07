@@ -32,8 +32,8 @@
 
     <ImageView
         android:id="@+id/mainImageView"
-        android:layout_width="402dp"
-        android:layout_height="603dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@+id/openGalleryButton"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="10dp"
