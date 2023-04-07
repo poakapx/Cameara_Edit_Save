@@ -23,16 +23,11 @@ import com.dsphotoeditor.sdk.utils.DsPhotoEditorConstants;
 
 public class MainActivity extends AppCompatActivity
 {
-
     public static final int PICK_IMAGE_CODE = 100;
     public static final int DS_PHOTO_EDITOR_REQUEST_CODE = 200;
-
     private static final int REQUEST_EXTERNAL_STORAGE_CODE = 1000;
-
     public static final String OUTPUT_PHOTO_DIRECTORY = "ds_photo_editor_sample";
-
     private ImageView imageView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
